@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=TTRCalc
+Comment=Ticket to Ride board game score calculator
+Keywords=ticket;ride
+Exec=ttrcalc
+Icon=eu.dupaw.ttrcalc
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+Version=1.0

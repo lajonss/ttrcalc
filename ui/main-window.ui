@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="Calc" parent="GtkApplicationWindow">
+    <property name="can-focus">0</property>
+    <property name="title" translatable="yes">TTRCalc</property>
+    <child>
+      <object class="GtkBox">
+        <property name="can-focus">0</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkTextView" id="output">
+            <property name="vexpand">1</property>
+            <property name="can-focus">0</property>
+            <property name="wrap_mode">word-char</property>
+            <property name="height_request">20</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkGrid">
+            <property name="vexpand">1</property>
+            <property name="can-focus">0</property>
+            <property name="row-homogeneous">1</property>
+            <property name="column-homogeneous">1</property>
+            <child>
+              <object class="GtkButton" id="button1">
+                <property name="label" translatable="yes">1</property>
+                <property name="name">1</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button2">
+                <property name="label" translatable="yes">2</property>
+                <property name="name">2</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button3">
+                <property name="label" translatable="yes">3</property>
+                <property name="name">3</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button4">
+                <property name="label" translatable="yes">4</property>
+                <property name="name">4</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button5">
+                <property name="label" translatable="yes">5</property>
+                <property name="name">5</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button6">
+                <property name="label" translatable="yes">6</property>
+                <property name="name">6</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button7">
+                <property name="label" translatable="yes">7</property>
+                <property name="name">7</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button8">
+                <property name="label" translatable="yes">8</property>
+                <property name="name">8</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button9">
+                <property name="label" translatable="yes">9</property>
+                <property name="name">9</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_back">
+                <signal name="clicked" handler="on_button_back" swapped="no"/>
+                <child>
+                  <object class="GtkImage" id="image_back">
+                    <property name="can-focus">0</property>
+                    <property name="icon-name">edit-undo-symbolic</property>
+                  </object>
+                </child>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button10">
+                <property name="label" translatable="yes">10</property>
+                <property name="name">10</property>
+                <signal name="clicked" handler="on_button_click" swapped="no"/>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_clear">
+                <property name="label" translatable="yes">C</property>
+                <signal name="clicked" handler="on_button_clear" swapped="no"/>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">3</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkTextView" id="history">
+            <property name="vexpand">1</property>
+            <property name="can-focus">0</property>
+            <property name="wrap-mode">word-char</property>
+            <property name="height_request">20</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="can-focus">0</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
