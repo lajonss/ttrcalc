@@ -1,0 +1,17 @@
+textview {
+    min-height: 25px;
+}
+
+.output {
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+.history {
+    font-size: 1.3em;
+}
+
+grid > button {
+    font-size: 1.2em;
+    font-weight: bolder;
+}

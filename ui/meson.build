@@ -15,7 +15,9 @@ install_data(
 )
 
 icondir = join_paths(datadir, 'icons', 'hicolor')
-
 install_data('icons/hicolor/scalable/@0@.svg'.format(application_id),
   install_dir: join_paths(icondir, 'scalable', 'apps')
+)
+install_data('icons/hicolor/symbolic/@0@-symbolic.svg'.format(application_id),
+  install_dir: join_paths(icondir, 'symbolic', 'apps')
 )

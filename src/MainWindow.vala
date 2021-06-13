@@ -2,6 +2,7 @@ using Gdk;
 using Gee;
 using Gtk;
 
+
 [GtkTemplate (ui="/eu/dupaw/ttrcalc/main-window.ui")]
 public class Calc : ApplicationWindow {
     [GtkChild] unowned TextView output;
@@ -33,11 +34,10 @@ public class Calc : ApplicationWindow {
         current = new ArrayQueue<int>();
         output_buffer = output.buffer;
         history_buffer = history.buffer;
-        history_buffer.text = " ";
         update_output();
         output_buffer.set_modified(true);
 
-        var key_controller = new EventControllerKey ();
+        var key_controller = new EventControllerKey();
         key_controller.key_pressed.connect(on_key_pressed);
         ((Widget)this).add_controller(key_controller);
     }
@@ -137,6 +137,6 @@ public class Calc : ApplicationWindow {
         if (existing_text == "")
             history_buffer.text = sum.to_string();
         else
-            history_buffer.text = sum.to_string () + ", " + existing_text;
+            history_buffer.text = existing_text + ", " + sum.to_string ();
     }
 }
