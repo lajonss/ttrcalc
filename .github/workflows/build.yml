@@ -1,0 +1,20 @@
+name: Makepkg build and check
+on: push
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Makepkg
+      id: makepkg
+      uses: edlanglois/pkgbuild-action@v1.1.7
+    - name: Summary
+      run: |
+        echo "Successfully created the following package archive"
+        echo "Package: ${{ steps.makepkg.outputs.pkgfile0 }}"
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+        path: ${{ steps.makepkg.outputs.pkgfile0 }}
