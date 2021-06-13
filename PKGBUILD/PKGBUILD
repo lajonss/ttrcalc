@@ -1,0 +1,38 @@
+# Maintainer: lajonss <l3n1@dupaw.eu>
+
+pkgname=ttrcalc-git
+pkgver=1.0
+pkgrel=1
+pkgdesc="Ticket to Ride board game score calculator"
+url="https://github.com/lajonss/ttrcalc"
+arch=(x86_64 aarch64)
+license=(GPL)
+depends=(gtk4 glib2 libgee)
+makedepends=(vala meson git)
+source=(git+https://github.com/lajonss/ttrcalc.git#tag=$pkgver)
+sha256sums=('SKIP')
+
+pkgver() {
+    cd "$srcdir/${pkgname%-git}"
+    git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+    cd "$srcdir/${pkgname%-git}"
+}
+
+build() {
+    cd "$srcdir/${pkgname%-git}"
+    arch-meson . _build
+    meson compile -C _build
+}
+
+check() {
+    cd "$srcdir/${pkgname%-git}"
+    meson test -C _build --print-errorlogs
+}
+
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    DESTDIR="$pkgdir" meson install -C _build
+}
