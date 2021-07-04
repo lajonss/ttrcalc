@@ -9,3 +9,4 @@ Type=Application
 Categories=Game;
 StartupNotify=true
 Version=1.0
+X-Purism-FormFactor=Workstation;Mobile;
