@@ -95,12 +95,12 @@ public class Calc : ApplicationWindow {
     }
 
     void add (int amount) {
-        current.offer_tail (points[amount]);
+        current.offer_head (points[amount]);
         update_output ();
     }
 
     void remove_last_amount () {
-        current.poll_tail ();
+        current.poll_head ();
         update_output ();
     }
 
@@ -134,9 +134,10 @@ public class Calc : ApplicationWindow {
 
     void update_history () {
         var existing_text = history_buffer.text;
+        var current_sum = sum.to_string ();
         if (existing_text == "")
-            history_buffer.text = sum.to_string();
+            history_buffer.text = current_sum;
         else
-            history_buffer.text = existing_text + ", " + sum.to_string ();
+            history_buffer.text = current_sum + ", " + existing_text;
     }
 }
