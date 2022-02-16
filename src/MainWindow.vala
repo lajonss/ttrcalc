@@ -95,12 +95,12 @@ public class Calc : ApplicationWindow {
     }
 
     void add (int amount) {
-        current.offer_head (points[amount]);
+        current.offer_tail (points[amount]);
         update_output ();
     }
 
     void remove_last_amount () {
-        current.poll_head ();
+        current.poll_tail ();
         update_output ();
     }
 
